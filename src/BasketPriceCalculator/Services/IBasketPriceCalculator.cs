@@ -8,6 +8,6 @@ namespace BasketPriceCalculator.Services
 {
     public interface IBasketPriceCalculator
     {
-        decimal Calculate(IReadOnlyList<BasketItem> basketItems);
+        decimal Calculate(IReadOnlyList<BasketItem> basketItems, IReadOnlyList<Offer> offers = null);
     }
 }

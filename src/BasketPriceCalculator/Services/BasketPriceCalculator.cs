@@ -9,7 +9,7 @@ namespace BasketPriceCalculator.Services
 {
     public class BasketPriceCalculator : IBasketPriceCalculator
     {
-        public decimal Calculate(IReadOnlyList<BasketItem> basketItems)
+        public decimal Calculate(IReadOnlyList<BasketItem> basketItems, IReadOnlyList<Offer> offers = null)
         {
             return basketItems.Sum(x => x.Product.Price * x.Quantity);
         }
