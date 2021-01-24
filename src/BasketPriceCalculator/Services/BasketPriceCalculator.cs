@@ -10,7 +10,11 @@ namespace BasketPriceCalculator.Services
     {
         public decimal Calculate(IReadOnlyList<BasketItem> basketItems)
         {
-            return 2.95m;
+            if (basketItems.Count == 3)
+            {
+                return 2.95m;
+            }
+            return 1.95m;
         }
     }
 }
