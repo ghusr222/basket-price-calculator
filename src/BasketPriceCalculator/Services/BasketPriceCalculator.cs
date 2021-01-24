@@ -1,5 +1,6 @@
 ﻿using BasketPriceCalculator.Entities;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,7 @@ namespace BasketPriceCalculator.Services
     {
         public decimal Calculate(IReadOnlyList<BasketItem> basketItems)
         {
-            if (basketItems.Count == 3)
-            {
-                return 2.95m;
-            }
-            return 1.95m;
+            return basketItems.Sum(x => x.Product.Price * x.Quantity);
         }
     }
 }
